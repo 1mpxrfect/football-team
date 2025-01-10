@@ -6,86 +6,86 @@ const playerCards = document.getElementById("player-cards");
 const playersDropdownList = document.getElementById("players");
 const countryDropdownList = document.getElementById("country");
 
-fetch('data.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Failed to load data');
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log(data);
-    
-    if (!data.teams || data.teams.length === 0) {
-      throw new Error('No teams data found');
-    }
+const fetchTeamData = async () => {
+  try {
+    const response = await fetch('data.json');
+    if (!response.ok) throw new Error('Failed to load data');
+    const data = await response.json();
 
-    const selectedTeam = data.teams.find(team => team.team === "France");
+    if (!data.teams || data.teams.length === 0) throw new Error('No teams data found');
 
-    if (!selectedTeam) {
-      throw new Error('Selected team not found in the data');
-    }
-
-    const { sport, team, year, players } = selectedTeam;
-    const { coachName } = selectedTeam.headCoach;
-
-    typeOfSport.textContent = sport;
-    teamName.textContent = team;
-    worldCupYear.textContent = year;
-    headCoach.textContent = coachName;
-
-    const setPlayerCards = (arr = players) => {
-      playerCards.innerHTML = ''; 
-      playerCards.innerHTML += arr
-        .map(
-          ({ name, position, number, isCaptain, nickname }) => {
-            return `
-            <div class="player-card">
-              <h2>${isCaptain ? "(Captain)" : ""} ${name}</h2>
-              <p>Position: ${position}</p>
-              <p>Number: ${number}</p>
-              <p>Nickname: ${nickname !== null ? nickname : "N/A"}</p>
-            </div>
-          `;
-          }
-        )
-        .join('');
-    };
-
-    playersDropdownList.addEventListener("change", (e) => {
-      switch (e.target.value) {
-        case "forward":
-          setPlayerCards(players.filter((player) => player.position === "forward"));
-          break;
-        case "midfielder":
-          setPlayerCards(players.filter((player) => player.position === "midfielder"));
-          break;
-        case "defender":
-          setPlayerCards(players.filter((player) => player.position === "defender"));
-          break;
-        case "goalkeeper":
-          setPlayerCards(players.filter((player) => player.position === "goalkeeper"));
-          break;
-        default:
-          setPlayerCards(players);
-          break;
-      }
-    });
-
-    countryDropdownList.addEventListener("change", (e) => {
-      const selectedCountry = e.target.value;
-      const countryTeam = data.teams.find(team => team.team === selectedCountry);
-
-      if (countryTeam) {
-        setPlayerCards(countryTeam.players);
-      } else {
-        console.log('Country not found');
-        alert('Country not found in the data!');
-      }
-    });
-
-    setPlayerCards(players);
-  })
-  .catch(error => {
+    return data;
+  } catch (error) {
     console.error('Error loading data:', error);
+    alert('Error loading data. Please try again later.');
+  }
+};
+
+const updateTeamStats = (teamData) => {
+  const { sport, team, year, headCoach: { coachName }, players } = teamData;
+
+  typeOfSport.textContent = sport;
+  teamName.textContent = team;
+  worldCupYear.textContent = year;
+  headCoach.textContent = coachName;
+
+  setPlayerCards(players);
+};
+
+const setPlayerCards = (players) => {
+  playerCards.innerHTML = players
+    .map(({ name, position, number, isCaptain, nickname }) => `
+      <div class="player-card">
+        <h2>${isCaptain ? "(Captain) " : ""}${name}</h2>
+        <p>Position: ${position}</p>
+        <p>Number: ${number}</p>
+        <p>Nickname: ${nickname || "N/A"}</p>
+      </div>
+    `)
+    .join('');
+};
+
+const filterPlayers = (players, filterValue) => {
+  if (filterValue === "all") return players;
+  return players.filter(player => player.position.toLowerCase() === filterValue);
+};
+
+const updateCountryTeamData = (data, selectedCountry) => {
+  const selectedTeam = data.teams.find(team => team.team === selectedCountry);
+  if (!selectedTeam) {
+    console.error('Selected country not found');
+    alert('Country not found in the data!');
+    return;
+  }
+
+  updateTeamStats(selectedTeam);
+};
+
+const handleCountryChange = (data) => {
+  countryDropdownList.addEventListener("change", (e) => {
+    const selectedCountry = e.target.value;
+    updateCountryTeamData(data, selectedCountry);
   });
+};
+
+const handlePlayerFilterChange = (players) => {
+  playersDropdownList.addEventListener("change", (e) => {
+    const filteredPlayers = filterPlayers(players, e.target.value);
+    setPlayerCards(filteredPlayers);
+  });
+};
+
+const initialize = async () => {
+  const data = await fetchTeamData();
+  if (!data) return;
+
+  const defaultCountry = "France";
+  const initialTeam = data.teams.find(team => team.team === defaultCountry);
+  if (initialTeam) updateTeamStats(initialTeam);
+
+  handleCountryChange(data);
+
+  if (initialTeam) handlePlayerFilterChange(initialTeam.players);
+};
+
+initialize();
