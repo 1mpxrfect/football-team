@@ -6,6 +6,9 @@ const playerCards = document.getElementById("player-cards");
 const playersDropdownList = document.getElementById("players");
 const countryDropdownList = document.getElementById("country");
 
+let selectedPlayerFilter = "all"; 
+let currentPlayers = []; 
+
 const fetchTeamData = async () => {
   try {
     const response = await fetch('data.json');
@@ -29,11 +32,13 @@ const updateTeamStats = (teamData) => {
   worldCupYear.textContent = year;
   headCoach.textContent = coachName;
 
-  setPlayerCards(players);
+  currentPlayers = players; 
+  setPlayerCards(currentPlayers);
 };
 
 const setPlayerCards = (players) => {
-  playerCards.innerHTML = players
+  const filteredPlayers = filterPlayers(players, selectedPlayerFilter);
+  playerCards.innerHTML = filteredPlayers
     .map(({ name, position, number, isCaptain, nickname }) => `
       <div class="player-card">
         <h2>${isCaptain ? "(Captain) " : ""}${name}</h2>
@@ -68,10 +73,10 @@ const handleCountryChange = (data) => {
   });
 };
 
-const handlePlayerFilterChange = (players) => {
+const handlePlayerFilterChange = () => {
   playersDropdownList.addEventListener("change", (e) => {
-    const filteredPlayers = filterPlayers(players, e.target.value);
-    setPlayerCards(filteredPlayers);
+    selectedPlayerFilter = e.target.value; 
+    setPlayerCards(currentPlayers); 
   });
 };
 
@@ -85,7 +90,7 @@ const initialize = async () => {
 
   handleCountryChange(data);
 
-  if (initialTeam) handlePlayerFilterChange(initialTeam.players);
+  if (initialTeam) handlePlayerFilterChange();
 };
 
 initialize();
