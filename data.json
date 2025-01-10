@@ -1,0 +1,129 @@
+{
+    "teams": [
+      {
+        "team": "France",
+        "sport": "Football",
+        "year": 2018,
+        "isWorldCupWinner": true,
+        "headCoach": {
+          "coachName": "Didier Deschamps",
+          "matches": 7
+        },
+        "players": [
+          { "name": "Kylian Mbappé", "position": "forward", "number": 10, "isCaptain": false, "nickname": "Donatello" },
+          { "name": "Antoine Griezmann", "position": "forward", "number": 7, "isCaptain": false, "nickname": "Grizou" },
+          { "name": "Paul Pogba", "position": "midfielder", "number": 6, "isCaptain": false, "nickname": "La Pioche" },
+          { "name": "N'Golo Kanté", "position": "midfielder", "number": 13, "isCaptain": false, "nickname": "The Ant" },
+          { "name": "Hugo Lloris", "position": "goalkeeper", "number": 1, "isCaptain": true, "nickname": "Lolo" },
+          { "name": "Benjamin Pavard", "position": "defender", "number": 2, "isCaptain": false, "nickname": "Benji" },
+          { "name": "Samuel Umtiti", "position": "defender", "number": 22, "isCaptain": false, "nickname": "Sam" },
+          { "name": "Raphaël Varane", "position": "defender", "number": 4, "isCaptain": false, "nickname": "Raph" },
+          { "name": "Olivier Giroud", "position": "forward", "number": 9, "isCaptain": false, "nickname": "Oli" },
+          { "name": "Steven Nzonzi", "position": "midfielder", "number": 15, "isCaptain": false, "nickname": "Nzonzi" },
+          { "name": "Tanguy Ndombélé", "position": "midfielder", "number": 8, "isCaptain": false, "nickname": "Tangu" },
+          { "name": "Florian Thauvin", "position": "forward", "number": 26, "isCaptain": false, "nickname": "Flolo" },
+          { "name": "Djibril Sidibé", "position": "defender", "number": 19, "isCaptain": false, "nickname": "Dji" },
+          { "name": "Adil Rami", "position": "defender", "number": 6, "isCaptain": false, "nickname": "Rami" },
+          { "name": "Nabil Fekir", "position": "forward", "number": 18, "isCaptain": false, "nickname": "Nab" },
+          { "name": "Alphonse Areola", "position": "goalkeeper", "number": 23, "isCaptain": false, "nickname": "Alpha" },
+          { "name": "Benjamin Mendy", "position": "defender", "number": 22, "isCaptain": false, "nickname": "Mendy" },
+          { "name": "Léo Dubois", "position": "defender", "number": 12, "isCaptain": false, "nickname": "Leo" },
+          { "name": "Kurt Zouma", "position": "defender", "number": 4, "isCaptain": false, "nickname": "Zou" },
+          { "name": "Alassane Pléa", "position": "forward", "number": 9, "isCaptain": false, "nickname": "Plea" }
+        ]
+      },
+      {
+        "team": "Croatia",
+        "sport": "Football",
+        "year": 2018,
+        "isWorldCupWinner": false,
+        "headCoach": {
+          "coachName": "Zlatko Dalić",
+          "matches": 7
+        },
+        "players": [
+          { "name": "Luka Modrić", "position": "midfielder", "number": 10, "isCaptain": true, "nickname": "The Maestro" },
+          { "name": "Ivan Rakitić", "position": "midfielder", "number": 7, "isCaptain": false, "nickname": "Rakit" },
+          { "name": "Mario Mandžukić", "position": "forward", "number": 17, "isCaptain": false, "nickname": "Maksimir's Killer" },
+          { "name": "Dejan Lovren", "position": "defender", "number": 6, "isCaptain": false, "nickname": "Lovro" },
+          { "name": "Danijel Subašić", "position": "goalkeeper", "number": 23, "isCaptain": false, "nickname": "Suba" },
+          { "name": "Ivan Perišić", "position": "forward", "number": 4, "isCaptain": false, "nickname": "Ivi" },
+          { "name": "Ante Rebić", "position": "forward", "number": 18, "isCaptain": false, "nickname": "Reba" },
+          { "name": "Vladimir Smicer", "position": "midfielder", "number": 16, "isCaptain": false, "nickname": "Vladi" },
+          { "name": "Tin Jedvaj", "position": "defender", "number": 2, "isCaptain": false, "nickname": "Jed" },
+          { "name": "Šime Vrsaljko", "position": "defender", "number": 3, "isCaptain": false, "nickname": "Vrsal" },
+          { "name": "Lovre Kalinić", "position": "goalkeeper", "number": 1, "isCaptain": false, "nickname": "Kal" },
+          { "name": "Domagoj Vida", "position": "defender", "number": 21, "isCaptain": false, "nickname": "Dom" },
+          { "name": "Milan Badelj", "position": "midfielder", "number": 14, "isCaptain": false, "nickname": "Badi" },
+          { "name": "Andrej Kramarić", "position": "forward", "number": 9, "isCaptain": false, "nickname": "Kram" },
+          { "name": "Duje Ćaleta-Car", "position": "defender", "number": 5, "isCaptain": false, "nickname": "Ćale" },
+          { "name": "Marjan Čabraja", "position": "defender", "number": 17, "isCaptain": false, "nickname": "Čabra" },
+          { "name": "Ivan Strinić", "position": "defender", "number": 10, "isCaptain": false, "nickname": "Strino" },
+          { "name": "Borna Barišić", "position": "defender", "number": 15, "isCaptain": false, "nickname": "Borna" },
+          { "name": "Marko Pjaca", "position": "forward", "number": 13, "isCaptain": false, "nickname": "Pjaca" }
+        ]
+      },
+      {
+        "team": "Belgium",
+        "sport": "Football",
+        "year": 2018,
+        "isWorldCupWinner": false,
+        "headCoach": {
+          "coachName": "Roberto Martínez",
+          "matches": 7
+        },
+        "players": [
+          { "name": "Eden Hazard", "position": "forward", "number": 10, "isCaptain": true, "nickname": "The Wizard" },
+          { "name": "Romelu Lukaku", "position": "forward", "number": 9, "isCaptain": false, "nickname": "Big Rom" },
+          { "name": "Kevin De Bruyne", "position": "midfielder", "number": 7, "isCaptain": false, "nickname": "The Maestro" },
+          { "name": "Thibaut Courtois", "position": "goalkeeper", "number": 1, "isCaptain": false, "nickname": "Thibo" },
+          { "name": "Vincent Kompany", "position": "defender", "number": 4, "isCaptain": false, "nickname": "Kompa" },
+          { "name": "Dries Mertens", "position": "forward", "number": 14, "isCaptain": false, "nickname": "Ciro" },
+          { "name": "Axel Witsel", "position": "midfielder", "number": 6, "isCaptain": false, "nickname": "Witsel" },
+          { "name": "Mousa Dembélé", "position": "midfielder", "number": 15, "isCaptain": false, "nickname": "Mousa" },
+          { "name": "Thomas Meunier", "position": "defender", "number": 12, "isCaptain": false, "nickname": "Tom" },
+          { "name": "Jan Vertonghen", "position": "defender", "number": 5, "isCaptain": false, "nickname": "Verty" },
+          { "name": "Toby Alderweireld", "position": "defender", "number": 2, "isCaptain": false, "nickname": "Toby" },
+          { "name": "Marouane Fellaini", "position": "midfielder", "number": 20, "isCaptain": false, "nickname": "Fella" },
+          { "name": "Nacer Chadli", "position": "forward", "number": 22, "isCaptain": false, "nickname": "Chad" },
+          { "name": "Thomas Vermaelen", "position": "defender", "number": 6, "isCaptain": false, "nickname": "Verma" },
+          { "name": "Yannick Carrasco", "position": "forward", "number": 11, "isCaptain": false, "nickname": "Carras" },
+          { "name": "Youri Tielemans", "position": "midfielder", "number": 8, "isCaptain": false, "nickname": "Yoyo" },
+          { "name": "Simon Mignolet", "position": "goalkeeper", "number": 22, "isCaptain": false, "nickname": "Migs" },
+          { "name": "Leander Dendoncker", "position": "midfielder", "number": 14, "isCaptain": false, "nickname": "Dendo" },
+          { "name": "Adnan Januzaj", "position": "forward", "number": 16, "isCaptain": false, "nickname": "Adnan" }
+        ]
+      },
+      {
+        "team": "England",
+        "sport": "Football",
+        "year": 2018,
+        "isWorldCupWinner": false,
+        "headCoach": {
+          "coachName": "Gareth Southgate",
+          "matches": 7
+        },
+        "players": [
+          { "name": "Harry Kane", "position": "forward", "number": 9, "isCaptain": true, "nickname": "H" },
+          { "name": "Raheem Sterling", "position": "forward", "number": 7, "isCaptain": false, "nickname": "Raz" },
+          { "name": "Dele Alli", "position": "midfielder", "number": 20, "isCaptain": false, "nickname": "Dele" },
+          { "name": "Jordan Henderson", "position": "midfielder", "number": 8, "isCaptain": false, "nickname": "Hendo" },
+          { "name": "John Stones", "position": "defender", "number": 5, "isCaptain": false, "nickname": "Stoney" },
+          { "name": "Kyle Walker", "position": "defender", "number": 2, "isCaptain": false, "nickname": "Wally" },
+          { "name": "Harry Maguire", "position": "defender", "number": 6, "isCaptain": false, "nickname": "Slabhead" },
+          { "name": "Kieran Trippier", "position": "defender", "number": 12, "isCaptain": false, "nickname": "Tripp" },
+          { "name": "Jordan Pickford", "position": "goalkeeper", "number": 1, "isCaptain": false, "nickname": "Pickers" },
+          { "name": "Phil Jones", "position": "defender", "number": 4, "isCaptain": false, "nickname": "Jonesy" },
+          { "name": "Ashley Young", "position": "defender", "number": 18, "isCaptain": false, "nickname": "Youngy" },
+          { "name": "Eric Dier", "position": "midfielder", "number": 15, "isCaptain": false, "nickname": "Diery" },
+          { "name": "Ruben Loftus-Cheek", "position": "midfielder", "number": 16, "isCaptain": false, "nickname": "Rubes" },
+          { "name": "Jesse Lingard", "position": "forward", "number": 7, "isCaptain": false, "nickname": "Lingy" },
+          { "name": "Marcus Rashford", "position": "forward", "number": 11, "isCaptain": false, "nickname": "Rashy" },
+          { "name": "Danny Rose", "position": "defender", "number": 3, "isCaptain": false, "nickname": "Rosey" },
+          { "name": "James Tarkowski", "position": "defender", "number": 2, "isCaptain": false, "nickname": "Tarky" },
+          { "name": "Nick Pope", "position": "goalkeeper", "number": 13, "isCaptain": false, "nickname": "Popey" },
+          { "name": "Tammy Abraham", "position": "forward", "number": 9, "isCaptain": false, "nickname": "Tammy" }
+        ]
+      }
+    ]
+  }
